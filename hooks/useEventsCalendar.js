@@ -18,8 +18,8 @@ const useEventsCalendar = (fecha) => {
                      const fecha_inicio = evento.fecha;
                      const fecha_fin = evento.fecha_fin ? evento.fecha_fin : evento.fecha;
                      return (
-                            moment(fecha).isSame(fecha_inicio, 'day') ||
-                            moment(fecha).isBetween(fecha_inicio, fecha_fin, null, '(]')
+                            moment(moment(fecha).format('YYYY-MM-DD')).isSame(fecha_inicio, 'day') ||
+                            moment(moment(fecha).format('YYYY-MM-DD')).isBetween(fecha_inicio, fecha_fin, null, '(]')
                      );
               });
        }
