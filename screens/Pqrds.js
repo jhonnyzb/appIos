@@ -5,7 +5,7 @@ import HeaderMain from '../components/HeaderMain'
 import MainViewTabs from '../components/MainViewTabs'
 
 const { width, height } = Dimensions.get('screen');
-const link = 'https://www.idrd.gov.co/respuestas-peticionarios-anonimos#overlay-context=transparencia/instrumentos-gestion-informacion-publica/informe-peticiones-quejas-reclamos-denuncias';
+const link = 'https://idrd.gov.co/respuestas-a-peticionarios-anonimos';
 
 const Pqrds = ({ navigation }) => {
 

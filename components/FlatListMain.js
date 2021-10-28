@@ -94,7 +94,7 @@ const FlatListMain = ({ eventos }) => {
                                                         }
                                                  </View>
                                                  <View style={{ marginTop: 6 }}>
-                                                        {cercano(item)}
+                                                        {/* {cercano(item)} */}
                                                  </View>
                                           </TouchableOpacity>
                                           <DateEvents fecha_inicio={item.fecha} fecha_fin={item.fecha_fin ? item.fecha_fin : item.fecha} />
