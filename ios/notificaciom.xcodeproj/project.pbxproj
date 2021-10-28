@@ -18,6 +18,7 @@
 		2DCD954D1E0B4F2C00145EB5 /* notificaciomTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 00E356F21AD99517003FC87E /* notificaciomTests.m */; };
 		36FDA53243F2F7D341009FA5 /* libPods-notificaciom.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 9F52F12252329552984476B3 /* libPods-notificaciom.a */; };
 		81AB9BB82411601600AC10FF /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 81AB9BB72411601600AC10FF /* LaunchScreen.storyboard */; };
+		8A0F5CF3272B3A1400A4D97C /* puente.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A0F5CF2272B3A1400A4D97C /* puente.swift */; };
 		8A30E94226811A2E00FBEFA6 /* splash.png in Resources */ = {isa = PBXBuildFile; fileRef = 8A30E94126811A2E00FBEFA6 /* splash.png */; };
 		974762D5981068DCD3F10F11 /* libPods-notificaciom-tvOS.a in Frameworks */ = {isa = PBXBuildFile; fileRef = B59EB17F734900287C6E12B3 /* libPods-notificaciom-tvOS.a */; };
 		D179DD3D779FE449C90FA810 /* libPods-notificaciom-notificaciomTests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = EBDE47C21E25BBFFF69CEB4F /* libPods-notificaciom-notificaciomTests.a */; };
@@ -61,6 +62,8 @@
 		43F787AA21481ECAA885D055 /* Pods-notificaciom-tvOS.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-notificaciom-tvOS.debug.xcconfig"; path = "Target Support Files/Pods-notificaciom-tvOS/Pods-notificaciom-tvOS.debug.xcconfig"; sourceTree = "<group>"; };
 		81AB9BB72411601600AC10FF /* LaunchScreen.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; name = LaunchScreen.storyboard; path = notificaciom/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		842E656CBCBAE5A34F35482F /* Pods-notificaciom.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-notificaciom.debug.xcconfig"; path = "Target Support Files/Pods-notificaciom/Pods-notificaciom.debug.xcconfig"; sourceTree = "<group>"; };
+		8A0F5CF1272B3A1300A4D97C /* notificaciom-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "notificaciom-Bridging-Header.h"; sourceTree = "<group>"; };
+		8A0F5CF2272B3A1400A4D97C /* puente.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = puente.swift; sourceTree = "<group>"; };
 		8A30E94126811A2E00FBEFA6 /* splash.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = splash.png; sourceTree = "<group>"; };
 		8AD5F7F2272AEB2100A2F4F8 /* libswiftWebKit.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libswiftWebKit.tbd; path = usr/lib/swift/libswiftWebKit.tbd; sourceTree = SDKROOT; };
 		8AE4C0D22681031000556E07 /* Ionicons.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = Ionicons.ttf; sourceTree = "<group>"; };
@@ -180,6 +183,7 @@
 		83CBB9F61A601CBA00E9B192 = {
 			isa = PBXGroup;
 			children = (
+				8A0F5CF2272B3A1400A4D97C /* puente.swift */,
 				8AE4C0D1268102C300556E07 /* Fonts */,
 				13B07FAE1A68108700A75B9A /* notificaciom */,
 				832341AE1AAA6A7D00B99B32 /* Libraries */,
@@ -187,6 +191,7 @@
 				83CBBA001A601CBA00E9B192 /* Products */,
 				2D16E6871FA4F8E400B85C8A /* Frameworks */,
 				16637800280B55B1A224C98C /* Pods */,
+				8A0F5CF1272B3A1300A4D97C /* notificaciom-Bridging-Header.h */,
 			);
 			indentWidth = 2;
 			sourceTree = "<group>";
@@ -309,7 +314,7 @@
 					};
 					13B07F861A680F5B00A75B9A = {
 						DevelopmentTeam = 97TN2UVX6B;
-						LastSwiftMigration = 1120;
+						LastSwiftMigration = 1310;
 						ProvisioningStyle = Manual;
 					};
 					2D02E47A1E0B4A5D006451C7 = {
@@ -650,6 +655,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				13B07FBC1A68108700A75B9A /* AppDelegate.m in Sources */,
+				8A0F5CF3272B3A1400A4D97C /* puente.swift in Sources */,
 				13B07FC11A68108700A75B9A /* main.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -691,6 +697,7 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 9627920B8E2B9CAAB9933DF4 /* Pods-notificaciom-notificaciomTests.debug.xcconfig */;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				GCC_PREPROCESSOR_DEFINITIONS = (
 					"DEBUG=1",
@@ -714,6 +721,7 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 357F8B9F63F20AE59C218385 /* Pods-notificaciom-notificaciomTests.release.xcconfig */;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				COPY_PHASE_STRIP = NO;
 				INFOPLIST_FILE = notificaciomTests/Info.plist;
@@ -756,6 +764,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = com.idrd.agendaidrd.gov;
 				PRODUCT_NAME = "Agenda IDRD";
 				PROVISIONING_PROFILE_SPECIFIER = "agenda IDRD";
+				SWIFT_OBJC_BRIDGING_HEADER = "notificaciom-Bridging-Header.h";
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = 1;
@@ -790,6 +799,7 @@
 				PRODUCT_NAME = "Agenda IDRD";
 				PROVISIONING_PROFILE_SPECIFIER = "Agenda Idrd 2021";
 				"PROVISIONING_PROFILE_SPECIFIER[sdk=*]" = "agenda IDRD";
+				SWIFT_OBJC_BRIDGING_HEADER = "notificaciom-Bridging-Header.h";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = 1;
 				VERSIONING_SYSTEM = "apple-generic";

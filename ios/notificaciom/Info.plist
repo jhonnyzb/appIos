@@ -37,8 +37,14 @@
 			</dict>
 		</dict>
 	</dict>
+
+	<key>NSLocationAlwaysAndWhenInUseUsageDescription</key>
+  	<string>Necesito saber tu Ubicación, para recomendarte rutas hacia tus eventos favoritos</string>
+  	<key>NSLocationAlwaysUsageDescription</key>
+  	<string>Necesito saber tu Ubicación, para recomendarte rutas hacia tus eventos favoritos</string>
 	<key>NSLocationWhenInUseUsageDescription</key>
-	<string></string>
+	<string>Necesito saber tu Ubicación, para recomendarte rutas hacia tus eventos favoritos</string>
+
 	<key>UIAppFonts</key>
 	<array>
 		<string>Ionicons.ttf</string>
