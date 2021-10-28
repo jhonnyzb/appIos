@@ -62,6 +62,7 @@
 		81AB9BB72411601600AC10FF /* LaunchScreen.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; name = LaunchScreen.storyboard; path = notificaciom/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		842E656CBCBAE5A34F35482F /* Pods-notificaciom.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-notificaciom.debug.xcconfig"; path = "Target Support Files/Pods-notificaciom/Pods-notificaciom.debug.xcconfig"; sourceTree = "<group>"; };
 		8A30E94126811A2E00FBEFA6 /* splash.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = splash.png; sourceTree = "<group>"; };
+		8AD5F7F2272AEB2100A2F4F8 /* libswiftWebKit.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libswiftWebKit.tbd; path = usr/lib/swift/libswiftWebKit.tbd; sourceTree = SDKROOT; };
 		8AE4C0D22681031000556E07 /* Ionicons.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = Ionicons.ttf; sourceTree = "<group>"; };
 		9627920B8E2B9CAAB9933DF4 /* Pods-notificaciom-notificaciomTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-notificaciom-notificaciomTests.debug.xcconfig"; path = "Target Support Files/Pods-notificaciom-notificaciomTests/Pods-notificaciom-notificaciomTests.debug.xcconfig"; sourceTree = "<group>"; };
 		9F52F12252329552984476B3 /* libPods-notificaciom.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-notificaciom.a"; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -158,6 +159,7 @@
 		2D16E6871FA4F8E400B85C8A /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				8AD5F7F2272AEB2100A2F4F8 /* libswiftWebKit.tbd */,
 				ED297162215061F000B7C4FE /* JavaScriptCore.framework */,
 				ED2971642150620600B7C4FE /* JavaScriptCore.framework */,
 				9F52F12252329552984476B3 /* libPods-notificaciom.a */,
@@ -741,6 +743,10 @@
 				ENABLE_BITCODE = NO;
 				INFOPLIST_FILE = notificaciom/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				LIBRARY_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(SDKROOT)/usr/lib/swift",
+				);
 				MARKETING_VERSION = 1.1;
 				OTHER_LDFLAGS = (
 					"$(inherited)",
@@ -770,6 +776,10 @@
 				DEVELOPMENT_TEAM = 97TN2UVX6B;
 				INFOPLIST_FILE = notificaciom/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				LIBRARY_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(SDKROOT)/usr/lib/swift",
+				);
 				MARKETING_VERSION = 1.1;
 				OTHER_LDFLAGS = (
 					"$(inherited)",

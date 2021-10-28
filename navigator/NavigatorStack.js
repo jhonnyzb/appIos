@@ -15,8 +15,8 @@ const NavigatorStack = () => {
               <NavigationContainer>
                      <Stack.Navigator>
                             <Stack.Screen options={{ headerShown: false }} name="Tabs" component={NavigatorTabs} />
-                            <Stack.Screen options={{ headerTransparent: true, title: 'Detalles', headerTintColor: '#5b3d90' }} name="Details" component={Details} />
-                            <Stack.Screen options={{ headerShown: false }} name="eventsDay" component={EventsDay} />
+                            <Stack.Screen options={{ headerTransparent: true, title: 'Detalles', headerTintColor: '#5b3d90', headerBackTitleVisible: false }} name="Details" component={Details} />
+                            <Stack.Screen options={{ headerShown: false }} name="eventsDay"  component={EventsDay} />
                      </Stack.Navigator>
               </NavigationContainer>
        )
