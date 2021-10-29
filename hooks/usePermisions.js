@@ -1,4 +1,4 @@
-import { check, openSettings, PERMISSIONS, request } from 'react-native-permissions';
+import { check, openSettings, PERMISSIONS, request, checkLocationAccuracy, requestLocationAccuracy } from 'react-native-permissions';
 
 
 const usePermisions = () => {
@@ -15,6 +15,18 @@ const usePermisions = () => {
 		return permisionStatus;
 	}
 
+	const askLocationAcuraccy = async () => {
+		let locatioStatusAccuraccy;
+		locatioStatusAccuraccy = await checkLocationAccuracy();
+		return locatioStatusAccuraccy;
+	}
+
+	const requestLocationAcuraccy = async() => {
+		let locatioStatusAccuraccy;
+		locatioStatusAccuraccy = await requestLocationAccuracy({purposeKey: 'full'});
+		return locatioStatusAccuraccy;
+	}
+
 
 	const setBlocked = () => {
 		openSettings();
@@ -24,10 +36,12 @@ const usePermisions = () => {
 	return {
 		askLocationPermisions,
 		checkLocationPermisions,
+		askLocationAcuraccy,
+		requestLocationAcuraccy,
 		setBlocked
 	}
 }
 
-export default usePermisions
+export default usePermisions;
 
 

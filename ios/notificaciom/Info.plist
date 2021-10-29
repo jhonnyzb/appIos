@@ -37,14 +37,17 @@
 			</dict>
 		</dict>
 	</dict>
-
 	<key>NSLocationAlwaysAndWhenInUseUsageDescription</key>
-  	<string>Necesito saber tu Ubicación, para recomendarte rutas hacia tus eventos favoritos</string>
-  	<key>NSLocationAlwaysUsageDescription</key>
-  	<string>Necesito saber tu Ubicación, para recomendarte rutas hacia tus eventos favoritos</string>
+	<string>Necesito saber tu Ubicación, para recomendarte rutas hacia tus eventos favoritos</string>
+	<key>NSLocationAlwaysUsageDescription</key>
+	<string>Necesito saber tu Ubicación, para recomendarte rutas hacia tus eventos favoritos</string>
+	<key>NSLocationTemporaryUsageDescriptionDictionary</key>
+	<dict>
+		<key>full</key>
+		<string>Para darte mejores resultados en las rutas disponibles,te recomendamos activar la precisión mas alta</string>
+	</dict>
 	<key>NSLocationWhenInUseUsageDescription</key>
 	<string>Necesito saber tu Ubicación, para recomendarte rutas hacia tus eventos favoritos</string>
-
 	<key>UIAppFonts</key>
 	<array>
 		<string>Ionicons.ttf</string>

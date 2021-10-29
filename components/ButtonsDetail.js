@@ -1,9 +1,11 @@
-import React, { useEffect, useState } from 'react';
-import { StyleSheet, Text, TouchableOpacity, Linking } from 'react-native';
+import React, { useEffect, useRef, useState } from 'react';
+import { StyleSheet, Text, TouchableOpacity, Linking, Platform } from 'react-native';
 import { useNavigation } from '@react-navigation/native';
 import Icon from 'react-native-vector-icons/Ionicons';
 import useFavorites from '../hooks/useFavorites';
 import usePermisions from '../hooks/usePermisions';
+import ModalInfo from './ModalInfo';
+
 
 
 const SIZE_ICON = 40;
@@ -11,8 +13,9 @@ const ButtonsDetail = ({ flag, evento }) => {
 
 	const [favorite, setFavorite] = useState(false);
 	const { getFavorites, addFavorites, removeFavorites } = useFavorites();
-	const { checkLocationPermisions, askLocationPermisions } = usePermisions();
-	const navigation = useNavigation()
+	const { checkLocationPermisions, askLocationPermisions, askLocationAcuraccy, requestLocationAcuraccy } = usePermisions();
+	const navigation = useNavigation();
+	const modalInfoRef = useRef();
 
 	useEffect(() => {
 		isFavorite();
@@ -46,16 +49,40 @@ const ButtonsDetail = ({ flag, evento }) => {
 		} else if (flag === 4) {
 			const responseCheck = await checkLocationPermisions();
 			if (responseCheck === 'granted') {
-				navigation.navigate('mapEvents', { evento });
+				if (parseInt(Platform.Version, 10) >= 14) {
+					const response = await askLocationAcuraccy();
+					if (response === 'full') {
+						navigation.navigate('mapEvents', { evento });
+					} else if (response === 'reduced') {
+						await requestLocationAcuraccy();
+						navigation.navigate('mapEvents', { evento });
+					}else{
+						console.log('error', response);
+					}
+				} else {
+					navigation.navigate('mapEvents', { evento });
+				}
 			} else if (responseCheck === 'denied') {
 				const responseAsk = await askLocationPermisions();
 				if (responseAsk === 'granted') {
-					navigation.navigate('mapEvents', { evento });
+					if (parseInt(Platform.Version, 10) >= 14) {
+						const response = await askLocationAcuraccy();
+						if (response === 'full') {
+							navigation.navigate('mapEvents', { evento });
+						} else if (response === 'reduced') {
+							await requestLocationAcuraccy();
+							navigation.navigate('mapEvents', { evento });
+						}else{
+							console.log('error', response);
+						}
+					} else {
+						navigation.navigate('mapEvents', { evento });
+					}
 				}
 			} else {
-				console.log('blocked');
+				modalInfoRef.current.setVisibleLocation();
 			}
-			
+
 		}
 	}
 
@@ -76,14 +103,17 @@ const ButtonsDetail = ({ flag, evento }) => {
 
 
 	return (
-		<TouchableOpacity style={styles.buttonsInt} onPress={openLink}>
-			<Text style={{ textAlign: 'center' }}>
-				{getImage()}
-			</Text>
-			<Text style={styles.textButton}>
-				{flag === 1 ? 'Info aquí' : flag === 2 ? 'Dudas' : flag === 3 ? 'Favoritos' : 'Ir'}
-			</Text>
-		</TouchableOpacity>
+		<>
+			<TouchableOpacity style={styles.buttonsInt} onPress={openLink}>
+				<Text style={{ textAlign: 'center' }}>
+					{getImage()}
+				</Text>
+				<Text style={styles.textButton}>
+					{flag === 1 ? 'Info aquí' : flag === 2 ? 'Dudas' : flag === 3 ? 'Favoritos' : 'Ir'}
+				</Text>
+			</TouchableOpacity>
+			<ModalInfo ref={modalInfoRef} />
+		</>
 	)
 }
 

@@ -1,4 +1,5 @@
 import { useRef, useState } from 'react';
+import { Alert } from "react-native";
 import Geolocation from 'react-native-geolocation-service';
 
 let _timeout = null;
@@ -22,7 +23,6 @@ const useLocation = () => {
 	const followUserLocation = () => {
 		wachtId.current = Geolocation.watchPosition(
 			({ coords }) => {
-				console.log(coords);
 				const location = {
 					latitude: coords.latitude,
 					longitude: coords.longitude
@@ -51,7 +51,7 @@ const useLocation = () => {
 				} else {
 					message = msscode6;
 				}
-
+				createThreeButtonAlert(message);
 			},
 			{ accuracy: { ios: 'best' }, enableHighAccuracy: true, distanceFilter: 5, interval: 1000, fastestInterval: 1000 }
 		)
@@ -97,6 +97,14 @@ const useLocation = () => {
 		clearTimeout(_timeout);
 	}
 
+	const createThreeButtonAlert = (message) =>
+		Alert.alert(
+			"¡Atención!",
+			message,
+			[
+				{ text: "OK", onPress: () => { } }
+			]
+		);
 
 
 

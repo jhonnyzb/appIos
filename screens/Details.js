@@ -122,7 +122,6 @@ const Evento = ({ route, navigation }) => {
                             <ScrollView showsVerticalScrollIndicator={false} style={styles.scroll_View}>
                                    <Text style={styles.nombre}>{evento.nombre}</Text>
                                    <Text style={[styles.subTitle, { marginBottom: 15 }]}>Instituto Distrital de Recreación y Deporte</Text>
-
                                    <Animated.View style={[styles.info, { borderLeftColor: '#5c3d90', backgroundColor: '#D2C6E7', transform: [{ translateX: view4Translate }] }]}>
                                           <Text style={styles.textInfo}>Información</Text>
                                           <InfoDetails flag={1} info={`${evento.localidad && evento.localidad} - ${evento.lugar && evento.lugar}`} />
@@ -137,7 +136,7 @@ const Evento = ({ route, navigation }) => {
                                           <Text style={styles.textDescription}>Descripción</Text>
                                           <View style={styles.viewDescription}>
                                                  <View style={{ width: '95%' }}>
-                                                        <Text style={styles.textDescriptionInfo}>{evento.descripcion && evento.descripcion}</Text>
+                                                        <Text selectable style={styles.textDescriptionInfo}>{evento.descripcion && evento.descripcion}</Text>
                                                  </View>
                                           </View>
 
