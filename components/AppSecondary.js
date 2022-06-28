@@ -26,7 +26,7 @@ const AppSecondary = () => {
                      .catch(function (err) {
                             console.log(err);
                      });
-
+			  load('sliders');
               load('categorias');
               load('eventos');
        }
@@ -34,6 +34,7 @@ const AppSecondary = () => {
        const onchange = () => {
               load('categorias');
               load('eventos');
+			  load('sliders');
        }
 
 

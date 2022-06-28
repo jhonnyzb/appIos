@@ -5,6 +5,7 @@ import NavigatorTabs from './NavigatorTabs';
 import Details from '../screens/Details';
 import EventsDay from '../screens/EventsDay';
 import MapEvents from '../screens/MapEvents';
+import IntroSliders from '../screens/IntroSlider';
 
 
 
@@ -15,6 +16,7 @@ const NavigatorStack = () => {
        return (
               <NavigationContainer>
                      <Stack.Navigator>
+					 		<Stack.Screen options={{ headerShown: false }} name="Intro" component={IntroSliders} />
                             <Stack.Screen options={{ headerShown: false }} name="Tabs" component={NavigatorTabs} />
                             <Stack.Screen options={{ headerTransparent: true, title: 'Detalles', headerTintColor: '#5b3d90', headerBackTitleVisible: false }} name="Details" component={Details} />
                             <Stack.Screen options={{ headerShown: false }} name="eventsDay"  component={EventsDay} />

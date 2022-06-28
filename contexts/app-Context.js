@@ -7,7 +7,8 @@ import { appReducer } from './app-reducer';
 export const appInitialState = {
        categorias: [],
        eventos: [],
-       loading: true
+       loading: true,
+	   slides: [],
 }
 
 
@@ -32,7 +33,9 @@ export const AppProvider = ({ children }) => {
                             if (result.docs.length > 0) {
                                    if (key === 'categorias') {
                                           dispatch({ type: 'loadCategorias', payload: result.docs })
-                                   } else {
+                                   }else if(key === 'sliders'){
+										dispatch({ type:'loadSlides', payload: result.docs })
+								   }else {
                                           dispatch({
                                                  type: 'loadEventos', payload: {
                                                         data: result.docs.map((evento, index) => {
